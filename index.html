@@ -1,0 +1,54 @@
+---
+layout: default
+---
+<div class="section">
+<div class="container">
+    <div class="content">
+
+    {% for post in paginator.posts %}
+        <h2>
+          <a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+          <p><small>{{ post.date | date: "%b %-d, %Y" }}</small></p>
+        </h2>
+      <div>
+          {{ post.excerpt }}
+      </div>
+    {% endfor %}
+
+
+</div>
+
+    {% if paginator.total_pages > 1 %}
+<nav class="pagination">
+  {% if paginator.previous_page %}
+    <a class="button" href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&laquo; Prev</a>
+  {% else %}
+    <a class="button is-disabled">&laquo; Prev</a>
+  {% endif %}
+
+    {% if paginator.next_page %}
+    <a class="button" href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Next &raquo;</a>
+  {% else %}
+    <a class="button is-disabled">Next &raquo;</a>
+  {% endif %}
+
+<ul>
+  {% for page in (1..paginator.total_pages) %}
+  <li>
+    {% if page == paginator.page %}
+      <a class="button is-primary">{{ page }}</a>
+    {% elsif page == 1 %}
+      <a class="button" href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">{{ page }}</a>
+    {% else %}
+      <a class="button" href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a>
+    {% endif %}
+  </li>
+  {% endfor %}
+</ul>
+
+
+</nav>
+{% endif %}
+
+</div>
+</div>

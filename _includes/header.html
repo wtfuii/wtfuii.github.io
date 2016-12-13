@@ -1,0 +1,32 @@
+<section class="hero">
+  <div class="hero-body">
+    <div class="container">
+      <div class="columns">
+        <div class="column"></div>
+        <div class="column is-narrow">
+          <div id="logo" class="has-text-centered">
+            <h1 class="title">
+              » deja.pw «
+            </h1>
+            <h2 class="subtitle">
+              The usual madness
+            </h2>
+          </div>
+        </div>
+        <div class="column"></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+      <nav class="nav">
+        <div class="nav-center">
+          <div class="nav-item">
+            <a href="{{ "/" | relative_url}}">Blog</a> 
+        </div>
+            {% for my_page in site.pages %} {% if my_page.title %} <div class="nav-item"><a href="{{ my_page.url | relative_url }}">{{ my_page.title | escape }}</a></div>            {% endif %} {% endfor %}
+            <div class="nav-item">
+              <a href="{{ "/feed.xml" | relative_url }}">Feed</a>
+            </div>
+      </div>
+      </nav>

@@ -1,0 +1,23 @@
+---
+---
+
+@import "bulma/bulma";
+
+#logo {
+    border-style: double;
+    border-width: 3px;
+    padding: 1em 1em 1em 1em;
+}
+
+.avatar {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0.5em;
+    img {
+        border-radius:  50%;
+    }
+}
+
+nav {
+    margin-bottom: 15px;
+}

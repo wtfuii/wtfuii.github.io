@@ -1,0 +1,21 @@
+---
+layout: default
+---
+<div class="section">
+<div class="container">
+    <div class="content">
+
+    {% for post in site.posts %}
+        <h2>
+          <a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+          <p><small>{{ post.date | date: "%b %-d, %Y" }}</small></p>
+        </h2>
+      <div>
+          {{ post.excerpt }}
+      </div>
+    {% endfor %}
+
+
+</div>
+</div>
+</div>
