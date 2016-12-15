@@ -24,6 +24,8 @@ url: "" # the base hostname & protocol for your site, e.g. http://example.com
 github_username:  wtfuii
 paginate: 5
 paginate_path: "/page:num/"
+collections:
+  - projects
 
 # Build settings
 markdown: kramdown

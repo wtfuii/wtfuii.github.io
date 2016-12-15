@@ -6,6 +6,7 @@ layout: default
     <div class="content">
 
     {% for post in paginator.posts %}
+    <div class="box">
         <h2>
           <a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
           <p><small>{{ post.date | date: "%b %-d, %Y" }}</small></p>
@@ -13,6 +14,7 @@ layout: default
       <div>
           {{ post.excerpt }}
       </div>
+    </div>
     {% endfor %}
 
 
