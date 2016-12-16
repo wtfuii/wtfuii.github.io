@@ -1,7 +1,7 @@
 ---
 layout: default
 ---
-<div class="section">
+<div class="section margin-bottom">
 <div class="container">
     <div class="content">
 
@@ -9,7 +9,16 @@ layout: default
     <div class="box">
         <h2>
           <a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
-          <p><small>{{ post.date | date: "%b %-d, %Y" }}</small></p>
+          <p>
+            <small>
+              <span class="post-metadata"><span class="icon is-small vertical-text-bottom margin-right"><i class="fa fa-calendar" aria-hidden="true"></i></span>{{ post.date | date: "%b %-d, %Y" }}</span>
+            </small>  
+            {% if post.tags.size > 0 %}<span class="icon is-small vertical-text-bottom"><i class="fa fa-tag" aria-hidden="true"></i></span>{% endif %}
+            {% for tag in post.tags %}
+                <a class="taglink" href="{{ "/tags" | relative_url }}#{{ tag | slugize }}"><span class="tag is-info is-small vertical-center">{{ tag }}</span></a>
+            {% endfor %}
+            </p>
+
         </h2>
       <div>
           {{ post.excerpt }}

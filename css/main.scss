@@ -16,6 +16,12 @@
     }
 }
 
+span.tag.is-info {
+    a {
+        color: $white;
+    }
+}
+
 .avatar {
     margin-left: auto;
     margin-right: auto;
@@ -35,4 +41,37 @@
 
 nav.nav {
     margin-bottom: 15px;
+}
+
+
+
+
+a.taglink {
+    border-bottom: none !important;
+    &:hover {
+        border-bottom: none;
+    }
+}
+
+.vertical-center {
+    vertical-align: middle;
+}
+
+span.icon.vertical-text-bottom {
+    vertical-align: text-bottom;
+    &.margin-right {
+        margin-right: 0.5em;
+    }
+}
+
+.post-metadata {
+    margin-right: 1em;
+}
+
+.section.margin-bottom {
+    margin-bottom: 15px;
+}
+
+.fullwidth {
+    width: 100%
 }

@@ -29,17 +29,19 @@
 </article>
 
 <article class="message is-primary">
-  <div class="message-header">
-    <p class="has-text-centered">Profiles</p>
+  <div class="message-header has-text-centered">
+    <p>Tags</p>
   </div>
   <div class="message-body">
 
-                <div class="content">
-                    <a href="http://stackexchange.com/users/3472834">
-<img src="http://stackexchange.com/users/flair/3472834.png?theme=clean" alt="profile for wtfzn on Stack Exchange, a network of free, community-driven Q&amp;A sites" title="profile for wtfzn on Stack Exchange, a network of free, community-driven Q&amp;A sites">
-</a>
+                <div class="content has-text-centered">
+                  {% for tag in site.tags %} 
+                  {% capture tag_name %}{{ tag | first }}{% endcapture %}
+                  <a class="taglink" href="{{ "/tags" | relative_url }}#{{ tag_name | slugize }}"><span class="tag is-info is-small">{{ tag_name }}</span></a>
+                  {% endfor %}
                 </div>
   </div>
 </article>
+<div class="has-text-centered fullwidth"><small><a href='{{ "/imprint" | relative_url }}'>Impressum / Imprint</a></small></div>
 
 </section>
