@@ -25,8 +25,8 @@ $turquoise: $color5;
     background-color: $grey-lighter;
 }
 
-.button.is-disabled {
-    background-color: rgba(0, 0, 0, 0.7);
+a.button.is-disabled.pagination {
+    visibility: hidden;
 }
 
 .button {
@@ -43,10 +43,15 @@ $turquoise: $color5;
     }
 }
 
+.logocontainer {
+    text-align: center;
+}
+
 #logo {
     border-style: double;
     border-width: 3px;
     padding: 1em 1em 1em 1em;
+    display: inline-block;
 }
 
 #profile-icons {
@@ -99,9 +104,14 @@ nav.nav {
     border-style: double;
     border-width: 3px 0 3px 0;
     border-color: $grey-lighter;
+
     a {
         color: $black;
     }
+}
+
+a {
+    transition:color .2s ease-out, background 1s ease-in;
 }
 
 
