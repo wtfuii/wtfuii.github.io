@@ -29,8 +29,11 @@ $turquoise: $color5;
     background-color: rgba(0, 0, 0, 0.7);
 }
 
-.button.is-primary {
-    background-color: $color4;
+.button {
+    background-color: rgba(0, 0, 0, 0);
+    &.is-primary {
+        background-color: $color4;
+    }
 }
 
 .content {
@@ -53,7 +56,7 @@ $turquoise: $color5;
     }
 }
 
-span.tag.is-info {
+.tag.is-info {
     a {
         color: $white;
     }
