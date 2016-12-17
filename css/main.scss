@@ -1,7 +1,44 @@
 ---
 ---
 
+$color1: rgba(68, 67, 73, 1);
+$color2: rgba(86, 85, 91, 1);
+$color3: rgba(11, 19, 43, 1);
+$color4: rgba(91, 192, 190, 1);
+$color5: rgba(111, 255, 233, 1);
+
+$white: $color2;
+$grey-lighter: $color1;
+$grey-light: rgba(119, 117, 127, 1);
+$grey: rgba(178, 176, 191, 1);
+$grey-dark: rgba(214, 221, 239, 1);
+$grey-darker: rgba(238, 234, 255, 1);
+$black: invert($white);
+
+$blue: $color3;
+$purple: $color4;
+$turquoise: $color5;
+
 @import "bulma/bulma";
+
+.message-body {
+    background-color: $grey-lighter;
+}
+
+.button.is-disabled {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.button.is-primary {
+    background-color: $color4;
+}
+
+.content {
+    color: rgba(224, 224, 224, 1);
+    a {
+        border-bottom: none !important;
+    }
+}
 
 #logo {
     border-style: double;
@@ -20,6 +57,21 @@ span.tag.is-info {
     a {
         color: $white;
     }
+}
+
+.section {
+    border-radius: 5px;
+    border-style: double;
+    border-width: 3px;
+    border-color: $grey-lighter;
+}
+
+.message-header {
+    color: $grey-darker;
+    background-color: $grey-lighter;
+    border-style: double;
+    border-width: 0 0 3px 0;
+    border-color: $white;
 }
 
 .avatar {
@@ -41,6 +93,12 @@ span.tag.is-info {
 
 nav.nav {
     margin-bottom: 15px;
+    border-style: double;
+    border-width: 3px 0 3px 0;
+    border-color: $grey-lighter;
+    a {
+        color: $black;
+    }
 }
 
 
@@ -74,4 +132,13 @@ span.icon.vertical-text-bottom {
 
 .fullwidth {
     width: 100%
+}
+
+.hero-body.less-padding {
+    background-image: url('/images/stardust.png')
+}
+
+.columns.main-content {
+    margin-top: -15px;
+    background-image: url('/images/stardust.png')
 }

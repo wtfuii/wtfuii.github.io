@@ -1,25 +1,25 @@
+--- 
+layout: default 
 ---
-layout: default
----
-<div class="section margin-bottom">
-<div class="container">
+<div class="section .margin-bottom">
+  <div class="container">
     <div class="content">
-<article itemscope itemtype="http://schema.org/BlogPosting">
+      <article itemscope itemtype="http://schema.org/BlogPosting">
 
-  <header>
-    <h1 itemprop="name headline"><a href="{{ page.url | relative_url }}">{{ page.title | escape }}</a>
-    <p><small><time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time>{% if page.author %} • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>{% endif %}</p>
+        <header>
+          <h1 itemprop="name headline"><a href="{{ page.url | relative_url }}">{{ page.title | escape }}</a>
+            <p><small><time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time></small></p>
     </h1>
   </header>
 
-  <divitemprop="articleBody">
+  <div itemprop="articleBody">
     {{ content }}
   </div>
 
   {% if site.disqus.shortname %}
     {% include disqus_comments.html %}
   {% endif %}
-</article>
+      </article>
     </div>
-</div>
+  </div>
 </div>
