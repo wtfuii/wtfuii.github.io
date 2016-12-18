@@ -36,6 +36,10 @@ a.button.is-disabled.pagination {
     }
 }
 
+.no-margin-bottom:not(:last-child) {
+    margin-bottom: 0;
+}
+
 .content {
     color: rgba(224, 224, 224, 1);
     a {
