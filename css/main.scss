@@ -41,6 +41,21 @@ a.button.is-disabled.pagination {
     a {
         border-bottom: none !important;
     }
+    blockquote {
+        background-color: $white;
+    }
+
+    pre.highlight {
+        border-radius: 3px;
+        margin-bottom: 1em;
+        code {
+            background-color: $grey-lighter;
+        }
+}
+
+}
+code {
+    background-color: $grey-lighter;
 }
 
 .logocontainer {
@@ -114,7 +129,9 @@ a {
     transition:color .2s ease-out, background 1s ease-in;
 }
 
-
+.tagbox {
+    line-height: 1.8;
+}
 
 
 a.taglink {
@@ -125,7 +142,7 @@ a.taglink {
 }
 
 .vertical-center {
-    vertical-align: middle;
+    vertical-align: bottom;
 }
 
 span.icon.vertical-text-bottom {

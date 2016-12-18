@@ -34,7 +34,7 @@
   </div>
   <div class="message-body">
 
-                <div class="content has-text-centered">
+                <div class="content has-text-centered tagbox">
                   {% for tag in site.tags %} 
                   {% capture tag_name %}{{ tag | first }}{% endcapture %}
                   <a class="taglink" href="{{ "/tags" | relative_url }}#{{ tag_name | slugize }}"><span class="tag is-info is-small">{{ tag_name }}</span></a>
