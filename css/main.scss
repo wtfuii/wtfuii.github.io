@@ -21,6 +21,11 @@ $turquoise: $color5;
 
 @import "bulma/bulma";
 
+body, html {
+    height: 100%;
+    background-image: url('/images/stardust.png')
+}
+
 .message-body {
     background-color: $grey-lighter;
 }
