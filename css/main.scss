@@ -26,6 +26,10 @@ body, html {
     background-image: url('/images/stardust.png')
 }
 
+.content-column {
+    overflow: auto;
+}
+
 .message-body {
     background-color: $grey-lighter;
 }
