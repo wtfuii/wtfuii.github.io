@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "How to check if a JIRA update task ran successful?"
+title:  "How to check if a JIRA upgrade task ran successful?"
 date:   2016-12-22 20:10:12 +0100
 comments: true
 tags: jira
@@ -11,9 +11,9 @@ data of a table into the new datamodel.
 
 Atlassian provides a [detailed documentation][upgrade task] on that topic. As mentioned, the upgrade task
 interface expects a `getModelVersion()` method to be implemented, which should return the new datamodel version
-after the update ran successful.
+after the upgrade ran successful.
 
-But how to find out if the update task actually ran successful? If the update task failed for some reason (uncaught exception anone?),
+But how to find out if the upgrade task actually ran successful? If the upgrade task failed for some reason (uncaught exception anone?),
 the datamodel version will not be incremented and all succeeding upgrade task won't run. An additional issue is that 
 JIRA will try to run the upgrade task on every restart because the new datamodel version was not applied due to the error.
 Depending on the database size and the complexity of the update statements, this
