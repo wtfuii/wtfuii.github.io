@@ -14,7 +14,7 @@ interface expects a `getModelVersion()` method to be implemented, which should r
 after the upgrade ran successful.
 
 But how to find out if the upgrade task actually ran successful? If the upgrade task failed for some reason (uncaught exception anone?),
-the datamodel version will not be incremented and all succeeding upgrade task won't run. An additional issue is that 
+the datamodel version will not be incremented and all succeeding upgrade tasks won't run. An additional issue is that 
 JIRA will try to run the upgrade task on every restart because the new datamodel version was not applied due to the error.
 Depending on the database size and the complexity of the update statements, this
 could cause a significant increase of JIRAs startup time.
@@ -32,7 +32,7 @@ WHERE ENTRYID = ID
 ```
 
 Substitute `<YOUR_AO_ID>` with the AO ID of your plugin tables. 
-If this query does *not* return the model version of your latest upgrad task, it's time to debug your upgrade tasks. 
+If this query does *not* return the model version of your latest upgrade task, it's time to debug your upgrade tasks. 
 
 Be aware that you could also manipulate the existing `PROPERTYVALUE` value in your database to a previous datamodel version. 
 This is how you could provoke a rerun of your upgrade tasks starting from that datamodel version.
