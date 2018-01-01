@@ -7,5 +7,5 @@ description: "HipChat integration, which converts posted timestamps into differe
 technologies:
     - name: "Altassian Connect"
     - name: "Node.JS"
-	- name: "Express"
+    - name: "Express"
 ---
