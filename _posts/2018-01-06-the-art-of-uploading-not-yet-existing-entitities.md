@@ -53,8 +53,7 @@ You still need to find a solution for the cases, when the user uploads files dur
 One "simple" way to achieve this would be to add a "dateCreated" column to your upload records and trigger a CRON job, which deletes all orphaned uploads older than x days. 
 
 ![Your CRON Job, cleaning up the database]({{ "/images/cleanup.gif" | absolute_url }}){: style="margin: 0 auto; display: block; max-height: 200px;"}
-<center>Your CRON Job, cleaning up the database</center>
-
+<center style="margin-bottom: 1em;">Your CRON Job, cleaning up the database</center>
 
 Another, more sophisticated, solution would be to create a websocket connection once the user opens the "Create" dialog, which will check if the user is still creating the issue. If the connection gets closed before the user finished the creation of his issue, all previously added attachments will be removed from the database.
 
