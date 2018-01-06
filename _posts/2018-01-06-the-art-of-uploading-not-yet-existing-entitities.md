@@ -11,7 +11,8 @@ Imagine the follwing situation: You are creating a your brand new JIRA clone. It
 
 Similar to JIRA, you want to attach pictures and other files to the issue you are currently creating. As you are working with a relational database, you want to have a relation between your issues and the uploaded files to quickly query all files attached to an issue. This is where you start running into problems. You cannot upload the file instantly after the user selects it in the browser, because there is yet no "Issue" entity in the backend, to which you could attach the uploaded file. The related "Issue" entity will be created if the user hits the "Create" button. So, how to solve this problem? I tried to collect the possible solutions and ordered them from "Bad" to "Still not beautiful, but a good trade-off for me".
 
-![Your files during upload]({{ "/images/upload_burger.gif" | absolute_url }}){: style="margin: 0 auto; display: block;"}
+![Your files during upload]({{ "/images/upload_burger.gif" | absolute_url }}){: style="margin: 0 auto; display: block; max-height: 200px;"}
+
 Your files during upload{: style="font-size: 75%; text-align: center;"}
 
 ## 1. Adding base64 encoded file to JSON
@@ -51,7 +52,8 @@ You still need to find a solution for the cases, when the user uploads files dur
 
 One "simple" way to achieve this would be to add a "dateCreated" column to your upload records and trigger a CRON job, which deletes all orphaned uploads older than x days. 
 
-![Your CRON Job, cleaning up the database]({{ "/images/cleanup.gif" | absolute_url }}){: style="margin: 0 auto; display: block;"}
+![Your CRON Job, cleaning up the database]({{ "/images/cleanup.gif" | absolute_url }}){: style="margin: 0 auto; display: block; max-height: 200px;"}
+
 Your CRON Job, cleaning up the database{: style="font-size: 75%; text-align: center;"}
 
 
