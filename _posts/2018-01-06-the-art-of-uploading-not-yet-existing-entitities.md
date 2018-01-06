@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "The art of uploading to not yet existing entities in RESTful applications"
-date:   2018-01-96 12:50:02 +0100
+date: 2018-01-06 12:50:02 +0100
 comments: true
 tags: REST 
 ---
@@ -11,7 +11,7 @@ Imagine the follwing situation: You are creating a your brand new JIRA clone. It
 
 Similar to JIRA, you want to attach pictures and other files to the issue you are currently creating. As you are working with a relational database, you want to have a relation between your issues and the uploaded files to quickly query all files attached to an issue. This is where you start running into problems. You cannot upload the file instantly after the user selects it in the browser, because there is yet no "Issue" entity in the backend, to which you could attach the uploaded file. The related "Issue" entity will be created if the user hits the "Create" button. So, how to solve this problem? I tried to collect the possible solutions and ordered them from "Bad" to "Still not beautiful, but a good trade-off for me".
 
-![Uplopad]({{ "/images/upload_burger.gif" | absolute_url }})
+![Your files during upload]({{ "/images/upload_burger.gif" | absolute_url }})
 
 ## 1. Adding base64 encoded file to JSON
  On submission of your form, you would encode your file content in base64 and attach it to a field of your submitted JSON. You'd have to provide an according deserialization method in the backend to convert the base64 string back into a file object. I wouldn't recommend this solution as base64 encoding may be errorprone due to different implementations on the frontend and backend. Additionally, base64 encoded files are approximately 37 % bigger than the original size was. That said, the JSON will be sent and the actual upload will be performed once the user hits the "Create" button. The upside of all if this is, that you can work with JSON instead of plain old FormData (yay!). In the backend you will have all necessary data in place with a single call to create the appropriate database relations.
@@ -50,8 +50,8 @@ You still need to find a solution for the cases, when the user uploads files dur
 
 One "simple" way to achieve this would be to add a "dateCreated" column to your upload records and trigger a CRON job, which deletes all orphaned uploads older than x days. 
 
-<iframe src="https://giphy.com/embed/r2fV4BgbGnIpW" width="480" height="304" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
-Your CRON Job, cleaning up the database.
+![Your CRON Job, cleaning up the database]({{ "/images/cleanup.gif" | absolute_url }})
+
 
 Another, more sophisticated, solution would be to create a websocket connection once the user opens the "Create" dialog, which will check if the user is still creating the issue. If the connection gets closed before the user finished the creation of his issue, all previously added attachments will be removed from the database.
 
