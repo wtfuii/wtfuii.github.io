@@ -3,7 +3,7 @@ layout: post
 title:  "The art of uploading to not yet existing entities in RESTful applications"
 date: 2018-01-06 12:50:02 +0100
 comments: true
-tags: REST 
+tags: rest 
 ---
 Single page appliations are the preferred way to build appealing web apps these days. If those apps are not already playing with GraphQL, most of them still rely on a more or less RESTful API to interact with the backend. In most cases, it is not a issue to create a new REST entity with a single call to the backend, as a JSON can include all necessary Data. But when it comes to files which are attached to an entity, things will become a little cumbersome.
 
