@@ -5,7 +5,7 @@ date:   2017-01-09 23:31:31 +0100
 comments: true
 tags: git
 ---
-If you are working as part of a team on a project hosted inside of a git repository, you may find yourself branching around in an excessive manner. This will lead to a huge pile of branches you don’t necessarily need tox store locally if they are already merged or saved on a remote.
+If you are working as part of a team on a project hosted inside of a git repository, you may find yourself branching around in an excessive manner. This will lead to a huge pile of branches you don’t necessarily need to store locally if they are already merged or saved on a remote.
 
 To clean this up and delete all local branches except the currently selected branch, issue the following command.
 
