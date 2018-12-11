@@ -13,8 +13,8 @@ Atlassian provides a [detailed documentation][upgrade task] on that topic. As me
 interface expects a `getModelVersion()` method to be implemented, which should return the new datamodel version
 after the upgrade ran successful.
 
-But how to find out if the upgrade task actually ran successful? If the upgrade task failed for some reason (uncaught exception anone?),
-the datamodel version will not be incremented and all succeeding upgrade tasks won't run. An additional issue is that 
+But how to find out if the upgrade task actually ran successful? If the upgrade task failed for some reason (uncaught exception anyone?),
+the datamodel version will not be incremented and all subsequent upgrade tasks won't run. An additional issue is that 
 JIRA will try to run the upgrade task on every restart because the new datamodel version was not applied due to the error.
 Depending on the database size and the complexity of the update statements, this
 could cause a significant increase of JIRAs startup time.
